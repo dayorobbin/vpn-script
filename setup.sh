@@ -28,7 +28,7 @@ exit 0
 fi
 mkdir /var/lib/premium-script;
 echo "IP=" >> /var/lib/premium-script/ipvps.conf
-wget https://raw.githubusercontent.com/dayorobbin/vpn-script/main/setup.sh?token=AEUIP4RZAZY4PVJ7IRDBM6TAYOKB2 && chmod +x cf.sh && ./cf.sh
+wget https://raw.githubusercontent.com/dayorobbin/vpn-script/main/main.sh && chmod +x cf.sh && ./cf.sh
 #install ssh ovpn
 wget https://raw.githubusercontent.com/Endka22/Autoscriptvps/main/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
 wget https://raw.githubusercontent.com/Endka22/Autoscriptvps/main/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
