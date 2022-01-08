@@ -2,26 +2,24 @@
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
-MYIP=$(wget -qO- ipinfo.io/ip);
+MYIP=$(wget -qO- ifconfig.me/ip);
 echo "Checking VPS"
-IZIN=$( curl http://akses.endka.ga:81/aksesku | grep $MYIP )
+IZIN=$( curl http://akses.vmess.my.id:81/aksesku | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
 echo -e "${green}Permission Accepted...${NC}"
-elif [ $MYIP != $IZIN ]; then
-echo -e "${green} SCRIPT HACKED!!!...${NC}"
 else
 echo -e "${red}Permission Denied!${NC}";
 echo "Only For Premium Users"
 exit 0
 fi
 apt install jq curl -y
-DOMAIN=endkavpn.tech
+DOMAIN=edu-proxy.xyz
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
-SUB_DOMAIN=${sub}.endkavpn.tech
+SUB_DOMAIN=${sub}.edu-proxy.xyz
 CF_ID=pradiasangindraswari@gmail.com
 CF_KEY=75b54a5c9fd50751003abac0fefee534528c0
 set -euo pipefail
-IP=$(wget -qO- ipinfo.io/ip);
+IP=$(wget -qO- ifconfig.me/ip);
 echo "Updating DNS for ${SUB_DOMAIN}..."
 ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
      -H "X-Auth-Email: ${CF_ID}" \
