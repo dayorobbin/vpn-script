@@ -12,14 +12,13 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$( curl http://akses.endka.ga:81/aksesku | grep $MYIP )
+IZIN=$( curl https://raw.githubusercontent.com/dayorobbin/vpn-script/main/ipvps | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
 echo -e "${green}Permission Accepted...${NC}"
-elif [ $MYIP != $IZIN ]; then
-echo -e "${green} SCRIPT HACKED!!!...${NC}"
 else
 echo -e "${red}Permission Denied!${NC}";
-echo "Only For Premium Users"
+echo "Please Contact Admin"
+rm -f setup.sh
 exit 0
 fi
 if [ -f "/etc/v2ray/domain" ]; then
